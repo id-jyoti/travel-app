@@ -2,29 +2,28 @@ import React from "react";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import "./Homepage.css";
+import SearchBox from "./components/SearchBox";
 
-import Tokyo from "./assets/images/tokyo.avif";
-import Paris from "./assets/images/paris.jpg";
-import Kyoto from "./assets/images/kyoto.jpg";
-import London from "./assets/images/london.webp";
+import spring from "./assets/images/spring.jpg";
+import members from "./assets/images/members.jpg";
 
 const destinations = [
-  { name: "Tokyo", image: "./assets/images/tokyo.avif" },
-  { name: "Paris", image: "./assets/images/paris.webp" },
-  { name: "Kyoto", image: "./assets/images/kyoto.jpg" },
-  { name: "london", image: "./assets/images/london.webp" },
+  { name: "Tokyo", image: require("./assets/images/tokyo.avif") },
+  { name: "Paris", image: require("./assets/images/paris.webp") },
+  { name: "Kyoto", image: require("./assets/images/kyoto.jpg") },
+  { name: "London", image: require("./assets/images/london.webp") },
 ];
 
 const promotions = [
   {
     title: "Spring Deals",
     description: "Up to 40% off hotels this season!",
-    image: "/images/spring.jpg",
+    image: spring,
   },
   {
     title: "Members Only",
     description: "Exclusive rates for members only.",
-    image: "/images/members.jpg",
+    image: members,
   },
 ];
 
@@ -38,15 +37,6 @@ const HeroBanner = () => (
   </div>
 );
 
-const DestinationCard = ({ name, image }) => (
-  <Card className="destination-card">
-    <img src={image} alt={name} className="destination-image" />
-    <CardContent>
-      <h3 className="destination-name">{name}</h3>
-    </CardContent>
-  </Card>
-);
-
 const PromotionCard = ({ title, description, image }) => (
   <Card className="promotion-card">
     <img src={image} alt={title} className="promotion-image" />
@@ -57,10 +47,46 @@ const PromotionCard = ({ title, description, image }) => (
   </Card>
 );
 
+const DestinationCard = ({ name, image }) => (
+  <Card className="destination-card">
+    <img src={image} alt={name} className="destination-image" />
+    <CardContent>
+      <h3 className="destination-name">{name}</h3>
+    </CardContent>
+  </Card>
+);
+
+const SearchByArea = () => (
+  <section className="section search-area">
+    <h2 className="section-title">Search by Area</h2>
+    <input 
+      type="text" 
+      placeholder="Enter a city, region, or country" 
+      className="search-input"
+    />
+    <Button className="search-button">Search</Button>
+  </section>
+);
+
+const Footer = () => (
+  <footer className="footer">
+    <p>© 2025 Travel Explorer. All rights reserved.</p>
+  </footer>
+);
+
 export default function HomePage() {
   return (
     <div className="homepage-container">
       <HeroBanner />
+      <SearchBox />
+      <section className="section">
+        <h2 className="section-title">Promotions</h2>
+        <div className="promotions-grid">
+          {promotions.map((promo, index) => (
+            <PromotionCard key={index} {...promo} />
+          ))}
+        </div>
+      </section>
 
       <section className="section">
         <h2 className="section-title">Top Destinations</h2>
@@ -71,14 +97,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
-        <h2 className="section-title">Promotions</h2>
-        <div className="promotions-grid">
-          {promotions.map((promo, index) => (
-            <PromotionCard key={index} {...promo} />
-          ))}
-        </div>
-      </section>
+      <SearchByArea />
+      <Footer />
     </div>
   );
 }

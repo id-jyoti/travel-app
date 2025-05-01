@@ -11,7 +11,7 @@ export default function SearchBox() {
 
   const handleSearch = () => {
     console.log("Search:", { destination, checkInDate, checkOutDate, adults, children, rooms });
-    // You can trigger filtering mocked results here later
+    //  trigger filtering mocked results here later
   };
 
   return (

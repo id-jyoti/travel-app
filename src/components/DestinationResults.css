@@ -1,0 +1,38 @@
+.results-container {
+  padding: 2rem;
+}
+
+.filter-sort {
+  margin-bottom: 1.5rem;
+}
+
+.filter-sort select {
+  padding: 0.4rem;
+  margin-left: 0.5rem;
+}
+
+.hotel-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hotel-card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hotel-card img {
+  width: 200px;
+  object-fit: cover;
+}
+
+.hotel-info {
+  padding: 1rem;
+}
+
+.hotel-info ul {
+  padding-left: 20px;
+}

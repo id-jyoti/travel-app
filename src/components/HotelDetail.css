@@ -1,0 +1,72 @@
+.hotel-detail-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hotel-images {
+  width: 50%;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+}
+
+.image-gallery {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.hotel-info {
+  width: 50%;
+}
+
+.hotel-info h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.hotel-price {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.hotel-rating {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hotel-amenities ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.hotel-amenities li {
+  font-size: 1rem;
+}
+
+.availability {
+  margin-top: 1rem;
+}
+
+.book-now-btn {
+  background-color: #FF6A00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.book-now-btn:hover {
+  background-color: #FF4500;
+}

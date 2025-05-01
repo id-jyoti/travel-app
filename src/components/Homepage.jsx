@@ -1,17 +1,17 @@
 import React from "react";
-import { Card, CardContent } from "./components/ui/card";
-import { Button } from "./components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import "./Homepage.css";
-import SearchBox from "./components/SearchBox";
+import SearchBox from "../components/SearchBox";
 
-import spring from "./assets/images/spring.jpg";
-import members from "./assets/images/members.jpg";
+import spring from "../assets/images/spring.jpg";
+import members from "../assets/images/members.jpg";
 
 const destinations = [
-  { name: "Tokyo", image: require("./assets/images/tokyo.avif") },
-  { name: "Paris", image: require("./assets/images/paris.webp") },
-  { name: "Kyoto", image: require("./assets/images/kyoto.jpg") },
-  { name: "London", image: require("./assets/images/london.webp") },
+  { name: "Tokyo", image: require("../assets/images/tokyo.avif") },
+  { name: "Paris", image: require("../assets/images/paris.webp") },
+  { name: "Kyoto", image: require("../assets/images/kyoto.jpg") },
+  { name: "London", image: require("../assets/images/london.webp") },
 ];
 
 const promotions = [
@@ -74,7 +74,7 @@ const Footer = () => (
   </footer>
 );
 
-export default function HomePage() {
+export default function Homepage() {
   return (
     <div className="homepage-container">
       <HeroBanner />
